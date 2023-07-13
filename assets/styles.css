@@ -5,6 +5,10 @@
     --secondary: #08A4BD;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
@@ -32,6 +36,10 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    /* Postion sticky si puede hacer referencia a relative, pero fixed siempre es contra la ventana */
 }
 
 nav a {
@@ -61,6 +69,19 @@ main {
 
 .card {
     border: 1px solid #ccc;
+    position: relative;
+    overflow: hidden;
+}
+
+.card .oferta {
+    background: var(--secondary);
+    color: #fff;
+    font-weight: 700;
+    padding: 0.25rem;
+    width: 60%;
+    position: absolute;
+    text-align: center;
+    transform: rotate(-25deg) translateX(-20%);
 }
 
 .card img {
